@@ -8,7 +8,7 @@ import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.ImageView;
 
-import com.sameh.stickers.Actions.EmojIconActions;
+import com.sameh.stickers.Actions.StickersActions;
 import com.sameh.stickers.Actions.OnClickListner;
 import com.sameh.stickers.Helper.EmojiconEditText;
 import com.sameh.stickers.Helper.EmojiconTextView;
@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
     ImageView emojiButton;
     ImageView submitButton;
     View rootView;
-    EmojIconActions emojIcon;
+    StickersActions emojIcon;
     // (S)
     ImageView image;
 
@@ -41,7 +41,7 @@ public class MainActivity extends AppCompatActivity {
         emojiconEditText2 = (EmojiconEditText) findViewById(R.id.emojicon_edit_text2);
         textView = (EmojiconTextView) findViewById(R.id.textView);
         image = (ImageView) findViewById(R.id.image);
-        emojIcon = new EmojIconActions(this, rootView, emojiconEditText, emojiButton,
+        emojIcon = new StickersActions(this, rootView, emojiconEditText, emojiButton,
                 new MakeStickers(
                         new Sticker(R.drawable.ayah,"ayah"),
                         new Sticker(R.drawable.flower_png,"flower_png")
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
                         image.setImageResource(emojicon.getImageFromResource(MainActivity.this));
                     }
                 });
-        emojIcon.setKeyboardListener(new EmojIconActions.KeyboardListener() {
+        emojIcon.setKeyboardListener(new StickersActions.KeyboardListener() {
             @Override
             public void onKeyboardOpen() {
                 Log.e("Keyboard", "open");

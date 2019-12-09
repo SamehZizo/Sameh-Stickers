@@ -35,7 +35,7 @@ import com.sameh.stickers.emoji.MakeStickers;
 /**
  * @author Hani Al Momani (hani.momanii@gmail.com)
  */
-public class EmojIconActions implements View.OnFocusChangeListener {
+public class StickersActions implements View.OnFocusChangeListener {
 
     private boolean useSystemEmoji = false;
     private EmojiconsPopup popup;
@@ -61,7 +61,7 @@ public class EmojIconActions implements View.OnFocusChangeListener {
      * @param emojiconEditText The Id of EditText.
      * @param emojiButton      The Id of ImageButton used to open Emoji
      */
-    public EmojIconActions(Context ctx, View rootView, EmojiconEditText emojiconEditText, ImageView emojiButton
+    public StickersActions(Context ctx, View rootView, EmojiconEditText emojiconEditText, ImageView emojiButton
             , MakeStickers makeStickers, OnClickListner onClickListner) {
         this.emojiButton = emojiButton;
         this.context = ctx;
@@ -90,7 +90,7 @@ public class EmojIconActions implements View.OnFocusChangeListener {
      *                         height.
      * @param emojiconEditText The Id of EditText.
      */
-    public EmojIconActions(Context ctx, View rootView, EmojiconEditText emojiconEditText,
+    public StickersActions(Context ctx, View rootView, EmojiconEditText emojiconEditText,
                            MakeStickers makeStickers) {
         addEmojiconEditTextList(emojiconEditText);
         this.context = ctx;
