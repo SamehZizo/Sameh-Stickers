@@ -61,7 +61,7 @@ public class StickersActions implements View.OnFocusChangeListener {
      * @param emojiconEditText The Id of EditText.
      * @param emojiButton      The Id of ImageButton used to open Emoji
      */
-    public StickersActions(Context ctx, View rootView, EmojiconEditText emojiconEditText, ImageView emojiButton
+    public StickersActions(Context ctx, View rootView, EmojiconEditText emojiconEditText,ImageView emojiButton
             , MakeStickers makeStickers, OnClickListner onClickListner) {
         this.emojiButton = emojiButton;
         this.context = ctx;
@@ -69,7 +69,21 @@ public class StickersActions implements View.OnFocusChangeListener {
         // (S)
         this.onClickListner = onClickListner;
         addEmojiconEditTextList(emojiconEditText);
-        this.popup = new EmojiconsPopup(rootView, ctx, useSystemEmoji, makeStickers.MakeStickers());
+        this.popup = new EmojiconsPopup(rootView, ctx, useSystemEmoji, makeStickers.MakeStickers(),
+                2);
+        initListeners();
+    }
+
+    public StickersActions(Context ctx, View rootView, EmojiconEditText emojiconEditText,ImageView emojiButton
+            ,int numOfColumn, MakeStickers makeStickers, OnClickListner onClickListner) {
+        this.emojiButton = emojiButton;
+        this.context = ctx;
+        this.rootView = rootView;
+        // (S)
+        this.onClickListner = onClickListner;
+        addEmojiconEditTextList(emojiconEditText);
+        this.popup = new EmojiconsPopup(rootView, ctx, useSystemEmoji, makeStickers.MakeStickers(),
+                numOfColumn);
         initListeners();
     }
 
@@ -96,7 +110,7 @@ public class StickersActions implements View.OnFocusChangeListener {
         this.context = ctx;
         this.rootView = rootView;
         this.popup = new EmojiconsPopup(rootView, ctx, useSystemEmoji,
-                makeStickers.MakeStickers());
+                makeStickers.MakeStickers(),2);
         initListeners();
     }
 

@@ -20,7 +20,7 @@
     android:background="@android:color/transparent"
     android:cacheColorHint="@android:color/transparent"
     android:horizontalSpacing="0dip"
-    android:numColumns="auto_fit"
     android:scrollbars="none"
     android:verticalSpacing="0dip" />
+    <!--android:numColumns="auto_fit"-->
     <!--android:columnWidth="40dip"-->

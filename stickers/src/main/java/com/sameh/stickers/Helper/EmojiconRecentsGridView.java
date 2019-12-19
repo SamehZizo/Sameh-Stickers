@@ -35,8 +35,8 @@ public class EmojiconRecentsGridView  extends EmojiconGridView implements Emojic
 
 
     public EmojiconRecentsGridView(Context context, Emojicon[] emojicons,
-                                   EmojiconRecents recents,EmojiconsPopup emojiconsPopup,boolean useSystemDefault) {
-        super(context, emojicons, recents, emojiconsPopup,useSystemDefault);
+                                   EmojiconRecents recents,EmojiconsPopup emojiconsPopup,boolean useSystemDefault,int numOfColumn) {
+        super(context, emojicons, recents, emojiconsPopup,useSystemDefault,numOfColumn);
         this.mUseSystemDefault=useSystemDefault;
         EmojiconRecentsManager recents1 = EmojiconRecentsManager
                 .getInstance(rootView.getContext());

@@ -25,7 +25,8 @@
         android:layout_width="80dip"
         android:layout_height="80dip"
         android:textColor="#000000"
-        android:gravity="center" />
+        android:gravity="center"
+        android:padding="10dip"/>
 
     <!--<hani.momanii.supernova_emoji_library.Helper.EmojiconTextView
         android:layout_gravity="center"

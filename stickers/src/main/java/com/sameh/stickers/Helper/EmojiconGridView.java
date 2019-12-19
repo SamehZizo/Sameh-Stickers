@@ -18,6 +18,7 @@ package com.sameh.stickers.Helper;
 
 import android.app.Activity;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.GridView;
@@ -41,12 +42,15 @@ public class EmojiconGridView{
     private boolean mUseSystemDefault = false;
 
 
-    public EmojiconGridView(Context context, Emojicon[] emojicons, EmojiconRecents recents, EmojiconsPopup emojiconPopup, boolean useSystemDefault) {
+    public EmojiconGridView(Context context, Emojicon[] emojicons, EmojiconRecents recents, EmojiconsPopup emojiconPopup, boolean useSystemDefault,int numOfColumn) {
         LayoutInflater inflater = (LayoutInflater) context.getSystemService(Activity.LAYOUT_INFLATER_SERVICE);
         mEmojiconPopup = emojiconPopup;
         rootView = inflater.inflate(R.layout.emojicon_grid, null);
         setRecents(recents);
         GridView gridView = (GridView) rootView.findViewById(R.id.Emoji_GridView);
+        // (S)
+        gridView.setNumColumns(numOfColumn);
+        Log.d("Sameh",gridView.getNumColumns() + " cc -> " + numOfColumn);
         if (emojicons== null) {
             mData = People.DATA;
         } else {
@@ -55,7 +59,6 @@ public class EmojiconGridView{
         }
         EmojiAdapter mAdapter = new EmojiAdapter(rootView.getContext(), mData ,useSystemDefault);
         mAdapter.setEmojiClickListener(new OnClickListner() {
-
             @Override
             public void onClick(Emojicon emojicon) {
                 if (mEmojiconPopup.onEmojiClickedListener != null) {

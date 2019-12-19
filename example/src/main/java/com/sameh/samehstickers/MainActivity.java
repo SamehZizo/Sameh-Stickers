@@ -41,8 +41,14 @@ public class MainActivity extends AppCompatActivity {
         emojiconEditText2 = (EmojiconEditText) findViewById(R.id.emojicon_edit_text2);
         textView = (EmojiconTextView) findViewById(R.id.textView);
         image = (ImageView) findViewById(R.id.image);
-        emojIcon = new StickersActions(this, rootView, emojiconEditText, emojiButton,
+        emojIcon = new StickersActions(this, rootView, emojiconEditText, emojiButton,4,
                 new MakeStickers(
+                        new Sticker(R.drawable.ayah,"ayah"),
+                        new Sticker(R.drawable.flower_png,"flower_png"),
+                        new Sticker(R.drawable.ayah,"ayah"),
+                        new Sticker(R.drawable.flower_png,"flower_png"),
+                        new Sticker(R.drawable.ayah,"ayah"),
+                        new Sticker(R.drawable.flower_png,"flower_png"),
                         new Sticker(R.drawable.ayah,"ayah"),
                         new Sticker(R.drawable.flower_png,"flower_png")
                 )

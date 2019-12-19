@@ -77,6 +77,7 @@ public class EmojiconsPopup extends PopupWindow implements ViewPager.OnPageChang
     // (S)
     public OnClickListner onEmojiClickedListener;
     private Emojicon[] emojicons;
+    private int numOfColumn;
 
     /**
      * Constructor
@@ -85,7 +86,7 @@ public class EmojiconsPopup extends PopupWindow implements ViewPager.OnPageChang
      * @param mContext         The context of current activity.
      * @param useSystemDefault .
      */
-    public EmojiconsPopup(View rootView, Context mContext, boolean useSystemDefault,
+    /*public EmojiconsPopup(View rootView, Context mContext, boolean useSystemDefault,
                           Emojicon[] emojicons) {
         super(mContext);
         this.mUseSystemDefault = useSystemDefault;
@@ -98,6 +99,23 @@ public class EmojiconsPopup extends PopupWindow implements ViewPager.OnPageChang
         setSize(LayoutParams.MATCH_PARENT, 255);
         setBackgroundDrawable(null);
 
+        this.numOfColumn = 0;
+    }*/
+
+    public EmojiconsPopup(View rootView, Context mContext, boolean useSystemDefault,
+                          Emojicon[] emojicons, int numOfColumn) {
+        super(mContext);
+        this.mUseSystemDefault = useSystemDefault;
+        this.mContext = mContext;
+        this.rootView = rootView;
+        this.emojicons = emojicons;
+        // (S)
+        this.numOfColumn = numOfColumn;
+        View customView = createCustomView();
+        setContentView(customView);
+        setSoftInputMode(LayoutParams.SOFT_INPUT_STATE_ALWAYS_VISIBLE);
+        setSize(LayoutParams.MATCH_PARENT, 255);
+        setBackgroundDrawable(null);
     }
 
     /**
@@ -282,7 +300,7 @@ public class EmojiconsPopup extends PopupWindow implements ViewPager.OnPageChang
         //emojisPager.setOnPageChangeListener(this);
         EmojiconRecents recents = this;
         mEmojisAdapter = new EmojisPagerAdapter(Arrays.asList(/*new EmojiconRecentsGridView(mContext, null, null, this, mUseSystemDefault),*/
-                new EmojiconGridView(mContext, this.emojicons, recents, this, mUseSystemDefault)
+                new EmojiconGridView(mContext, this.emojicons, recents, this, mUseSystemDefault,this.numOfColumn)
                 /*new EmojiconGridView(mContext, Flowers.DATA, recents, this, mUseSystemDefault),
                 new EmojiconGridView(mContext, Nature.DATA, recents, this, mUseSystemDefault),
                 new EmojiconGridView(mContext, Food.DATA, recents, this, mUseSystemDefault),
