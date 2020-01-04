@@ -50,7 +50,7 @@ public class EmojiconGridView{
         GridView gridView = (GridView) rootView.findViewById(R.id.Emoji_GridView);
         // (S)
         gridView.setNumColumns(numOfColumn);
-        Log.d("Sameh",gridView.getNumColumns() + " cc -> " + numOfColumn);
+        //Log.d("Sameh",gridView.getNumColumns() + " cc -> " + numOfColumn);
         if (emojicons== null) {
             mData = People.DATA;
         } else {
